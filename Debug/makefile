@@ -60,8 +60,8 @@ all: main-build
 main-build: Control_Lab_2.elf secondary-outputs
 
 # Tool invocations
-Control_Lab_2.elf: $(OBJS) $(USER_OBJS) C:\Users\thana\Desktop\TheShit\FRA233\ Control\ Engineering\ for\ Robotics\LAB2\nucleo_part\STM32F411RETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "Control_Lab_2.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\thana\Desktop\TheShit\FRA233 Control Engineering for Robotics\LAB2\nucleo_part\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Control_Lab_2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Control_Lab_2.elf: $(OBJS) $(USER_OBJS) C:\Users\thana\Desktop\TheShit\FRA233\ Control\ Engineering\ for\ Robotics\LAB2\nucleo_part\LAB2-Control\STM32F411RETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "Control_Lab_2.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\thana\Desktop\TheShit\FRA233 Control Engineering for Robotics\LAB2\nucleo_part\LAB2-Control\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Control_Lab_2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
