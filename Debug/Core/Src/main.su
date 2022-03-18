@@ -5,4 +5,4 @@ main.c:228:13:MX_TIM3_Init	32	static
 main.c:273:13:MX_USART2_UART_Init	8	static
 main.c:306:13:MX_GPIO_Init	48	static
 main.c:336:6:HAL_ADC_ConvCpltCallback	16	static
-main.c:392:6:Error_Handler	4	static,ignoring_inline_asm
+main.c:393:6:Error_Handler	4	static,ignoring_inline_asm

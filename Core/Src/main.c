@@ -53,7 +53,7 @@ float Position[2] = {0}; //P_o
 float Unwrap_Position[2] = {0}; //y_n
 float Filter_Out[2] = {0};
 float Velocity[2] = {0};
-float Sample_Time = 0.04;
+float Sample_Time = 1/50;
 float Cutoff_Frequency = 0.3183 ; // 1/M_PI
 float Delta_Position_Poten_Func = 0;
 float Delta_Position_Velocity_Func = 0;
@@ -241,7 +241,7 @@ static void MX_TIM3_Init(void)
   htim3.Instance = TIM3;
   htim3.Init.Prescaler = 999;
   htim3.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim3.Init.Period = 3999;
+  htim3.Init.Period = 1999;
   htim3.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
   htim3.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
   if (HAL_TIM_Base_Init(&htim3) != HAL_OK)
@@ -335,6 +335,7 @@ static void MX_GPIO_Init(void)
 
 void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef *hadc)
 {
+	a++;
 	//Memory previous input value from Potentiometer (Input[n-1])
 	Poten_Value[0] = Poten_Value[1];
 
