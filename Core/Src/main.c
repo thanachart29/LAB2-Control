@@ -335,7 +335,6 @@ static void MX_GPIO_Init(void)
 
 void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef *hadc)
 {
-	a++;
 	//Memory previous input value from Potentiometer (Input[n-1])
 	Poten_Value[0] = Poten_Value[1];
 
@@ -359,8 +358,6 @@ void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef *hadc)
 	{
 		Position[1] = Position[0];
 	}
-
-
 	//Previous Output position
 	Unwrap_Position[0] = Unwrap_Position[1];
 
